@@ -1,0 +1,675 @@
+{
+  "fonts": [
+    {
+      "font_id": "font-garamond-premier-pro",
+      "family": "Garamond Premier Pro",
+      "subfamily": "Regular",
+      "postscript_name": "GaramondPremPro",
+      "foundry": "Adobe",
+      "designer": "Robert Slimbach",
+      "vendor_id": "ADBE",
+      "version": "Version 2.000"
+    },
+    {
+      "font_id": "font-roboto",
+      "family": "Roboto",
+      "subfamily": "Regular",
+      "postscript_name": "Roboto-Regular",
+      "foundry": "Google",
+      "designer": "Christian Robertson",
+      "vendor_id": "GOOG",
+      "version": "Version 2.137"
+    },
+    {
+      "font_id": "font-comic-neue",
+      "family": "Comic Neue",
+      "subfamily": "Regular",
+      "postscript_name": "ComicNeue-Regular",
+      "foundry": "Craig Rozynski",
+      "designer": "Craig Rozynski",
+      "vendor_id": "CRZR",
+      "version": "Version 2.51"
+    },
+    {
+      "font_id": "font-arial",
+      "family": "Arial",
+      "subfamily": "Regular",
+      "postscript_name": "ArialMT",
+      "foundry": "Monotype",
+      "designer": "Robin Nicholas & Patricia Saunders",
+      "vendor_id": "MONO",
+      "version": "Version 7.00"
+    },
+    {
+      "font_id": "font-adobe-caslon-pro",
+      "family": "Adobe Caslon Pro",
+      "subfamily": "Regular",
+      "postscript_name": "ACaslonPro-Regular",
+      "foundry": "Adobe",
+      "designer": "Carol Twombly",
+      "vendor_id": "ADBE",
+      "version": "Version 2.000"
+    },
+    {
+      "font_id": "font-eb-garamond",
+      "family": "EB Garamond",
+      "subfamily": "Regular",
+      "postscript_name": "EBGaramond-Regular",
+      "foundry": "Google Fonts",
+      "designer": "Georg Duffner & Octavio Pardo",
+      "vendor_id": "GOOG",
+      "version": "Version 0.016"
+    },
+    {
+      "font_id": "font-minion-pro",
+      "family": "Minion Pro",
+      "subfamily": "Regular",
+      "postscript_name": "MinionPro-Regular",
+      "foundry": "Adobe",
+      "designer": "Robert Slimbach",
+      "vendor_id": "ADBE",
+      "version": "Version 2.115"
+    },
+    {
+      "font_id": "font-times-new-roman",
+      "family": "Times New Roman",
+      "subfamily": "Regular",
+      "postscript_name": "TimesNewRomanPSMT",
+      "foundry": "Monotype",
+      "designer": "Stanley Morison & Victor Lardent",
+      "vendor_id": "MONO",
+      "version": "Version 7.00"
+    },
+    {
+      "font_id": "font-libre-baskerville",
+      "family": "Libre Baskerville",
+      "subfamily": "Regular",
+      "postscript_name": "LibreBaskerville-Regular",
+      "foundry": "Impallari Type",
+      "designer": "Pablo Impallari & Rodrigo Fuenzalida",
+      "vendor_id": "IMPA",
+      "version": "Version 1.000"
+    }
+  ],
+  "licenses": [
+    {
+      "license_id": "lic-garamond-premier-pro",
+      "font_id": "font-garamond-premier-pro",
+      "license_name": "Adobe End User License Agreement",
+      "license_type": "Commercial EULA",
+      "source_url": "https://www.adobe.com/products/type/font-licensing/additional-licensing-options.html",
+      "source_type": "Primary",
+      "effective_date": "2024-01-15",
+      "retrieved_at": "2026-08-20",
+      "document_hash": "a4f8e91c7b3d2f1e0a9b8c7d6e5f4a3b2c1d0e9f",
+      "confidence": "High"
+    },
+    {
+      "license_id": "lic-roboto",
+      "font_id": "font-roboto",
+      "license_name": "Apache License, Version 2.0",
+      "license_type": "Open Source",
+      "source_url": "https://www.apache.org/licenses/LICENSE-2.0.html",
+      "source_type": "Primary",
+      "effective_date": "2004-01-26",
+      "retrieved_at": "2026-08-20",
+      "document_hash": "2b8b815229aa8a61e483fb4ba0588b8b6e4f1a8c",
+      "confidence": "High"
+    },
+    {
+      "license_id": "lic-comic-neue",
+      "font_id": "font-comic-neue",
+      "license_name": "SIL Open Font License 1.1",
+      "license_type": "Open Source",
+      "source_url": "https://scripts.sil.org/OFL",
+      "source_type": "Primary",
+      "effective_date": "2007-02-26",
+      "retrieved_at": "2026-08-20",
+      "document_hash": "f5d9b62ef4f1a238e1a1795db2c59d9c288bf7d2",
+      "confidence": "High"
+    },
+    {
+      "license_id": "lic-arial",
+      "font_id": "font-arial",
+      "license_name": "Microsoft Typography Font License Agreement",
+      "license_type": "Commercial EULA",
+      "source_url": "https://learn.microsoft.com/en-us/typography/fonts/font-faq",
+      "source_type": "Primary",
+      "effective_date": "2021-06-01",
+      "retrieved_at": "2026-08-20",
+      "document_hash": "3d9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c",
+      "confidence": "High"
+    },
+    {
+      "license_id": "lic-adobe-caslon-pro",
+      "font_id": "font-adobe-caslon-pro",
+      "license_name": "Adobe End User License Agreement",
+      "license_type": "Commercial EULA",
+      "source_url": "https://www.adobe.com/products/type/font-licensing/additional-licensing-options.html",
+      "source_type": "Primary",
+      "effective_date": "2024-01-15",
+      "retrieved_at": "2026-08-20",
+      "document_hash": "a4f8e91c7b3d2f1e0a9b8c7d6e5f4a3b2c1d0e9f",
+      "confidence": "High"
+    },
+    {
+      "license_id": "lic-eb-garamond",
+      "font_id": "font-eb-garamond",
+      "license_name": "SIL Open Font License 1.1",
+      "license_type": "Open Source",
+      "source_url": "https://scripts.sil.org/OFL",
+      "source_type": "Primary",
+      "effective_date": "2007-02-26",
+      "retrieved_at": "2026-08-20",
+      "document_hash": "f5d9b62ef4f1a238e1a1795db2c59d9c288bf7d2",
+      "confidence": "High"
+    },
+    {
+      "license_id": "lic-minion-pro",
+      "font_id": "font-minion-pro",
+      "license_name": "Adobe End User License Agreement",
+      "license_type": "Commercial EULA",
+      "source_url": "https://www.adobe.com/products/type/font-licensing/additional-licensing-options.html",
+      "source_type": "Primary",
+      "effective_date": "2024-01-15",
+      "retrieved_at": "2026-08-20",
+      "document_hash": "a4f8e91c7b3d2f1e0a9b8c7d6e5f4a3b2c1d0e9f",
+      "confidence": "High"
+    },
+    {
+      "license_id": "lic-times-new-roman",
+      "font_id": "font-times-new-roman",
+      "license_name": "Microsoft Typography Font License Agreement",
+      "license_type": "Commercial EULA",
+      "source_url": "https://learn.microsoft.com/en-us/typography/fonts/font-faq",
+      "source_type": "Primary",
+      "effective_date": "2021-06-01",
+      "retrieved_at": "2026-08-20",
+      "document_hash": "3d9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c",
+      "confidence": "High"
+    },
+    {
+      "license_id": "lic-libre-baskerville",
+      "font_id": "font-libre-baskerville",
+      "license_name": "SIL Open Font License 1.1",
+      "license_type": "Open Source",
+      "source_url": "https://scripts.sil.org/OFL",
+      "source_type": "Primary",
+      "effective_date": "2007-02-26",
+      "retrieved_at": "2026-08-20",
+      "document_hash": "f5d9b62ef4f1a238e1a1795db2c59d9c288bf7d2",
+      "confidence": "High"
+    }
+  ],
+  "license_clauses": [
+    {
+      "clause_id": "cl-garamond-1",
+      "license_id": "lic-garamond-premier-pro",
+      "category": "Commercial print",
+      "status": "Allowed",
+      "text": "You may use the Font Software to create and distribute printed materials, documents, and publications.",
+      "section": "Section 2.1 (Permitted Uses)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-garamond-2",
+      "license_id": "lic-garamond-premier-pro",
+      "category": "Paperback",
+      "status": "Allowed",
+      "text": "Print publishing for books and magazines is permitted for commercial release without print run limitations.",
+      "section": "Section 2.3 (Publishing)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-garamond-3",
+      "license_id": "lic-garamond-premier-pro",
+      "category": "Commercial sale",
+      "status": "Allowed",
+      "text": "You may sell, lease, or distribute publications containing static representations of the Font Software.",
+      "section": "Section 2.4 (Distribution of Goods)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-garamond-4",
+      "license_id": "lic-garamond-premier-pro",
+      "category": "Print-run limit",
+      "status": "Allowed",
+      "text": "There are no limits on the number of printed copies of publications generated using the Font Software.",
+      "section": "Section 2.3 (Publishing)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-garamond-5",
+      "license_id": "lic-garamond-premier-pro",
+      "category": "Cover",
+      "status": "Allowed",
+      "text": "Design of book covers and interior layouts is permitted using static graphics created with the font software.",
+      "section": "Section 2.5 (Artwork & Visuals)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-garamond-6",
+      "license_id": "lic-garamond-premier-pro",
+      "category": "Interior",
+      "status": "Allowed",
+      "text": "You may typeset the interior text of books using the Font Software.",
+      "section": "Section 2.1",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-garamond-7",
+      "license_id": "lic-garamond-premier-pro",
+      "category": "Ebook",
+      "status": "Restricted",
+      "text": "Embedding the Font Software in electronic publications (e.g. EPUB, MOBI) is prohibited under the standard license and requires a separate Ebook Embedding License.",
+      "section": "Section 3.2 (Prohibited Uses)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-garamond-8",
+      "license_id": "lic-garamond-premier-pro",
+      "category": "Font redistribution",
+      "status": "Prohibited",
+      "text": "You may not rent, lease, sublicense, give, lend, or distribute the Font Software, or any copy thereof, to any third party.",
+      "section": "Section 4.1 (No Redistribution)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-garamond-9",
+      "license_id": "lic-garamond-premier-pro",
+      "category": "Adult / sexual content",
+      "status": "Restricted",
+      "text": "Licensee shall not use the Font Software in connection with material that violates local community standards of decency, including adult novelty items and explicit pornography.",
+      "section": "Section 5.3 (Restricted Materials)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-garamond-10",
+      "license_id": "lic-garamond-premier-pro",
+      "category": "Modification",
+      "status": "Prohibited",
+      "text": "You may not modify, adapt, translate, reverse engineer, decompile, disassemble, or create derivative works based on the Font Software.",
+      "section": "Section 4.3 (No Modifications)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-roboto-1",
+      "license_id": "lic-roboto",
+      "category": "Commercial print",
+      "status": "Allowed",
+      "text": "Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works.",
+      "section": "Section 2 (Grant of Copyright License)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-roboto-2",
+      "license_id": "lic-roboto",
+      "category": "Paperback",
+      "status": "Allowed",
+      "text": "You may produce, publish, and distribute printed works using the font.",
+      "section": "Section 2",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-roboto-3",
+      "license_id": "lic-roboto",
+      "category": "Font redistribution",
+      "status": "Allowed",
+      "text": "You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the attribution requirements.",
+      "section": "Section 4 (Redistribution)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-roboto-4",
+      "license_id": "lic-roboto",
+      "category": "Modification",
+      "status": "Allowed",
+      "text": "You may create derivative works of the Font Software, provided that you include a prominent notice stating that you changed the files.",
+      "section": "Section 4(b)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-comic-neue-1",
+      "license_id": "lic-comic-neue",
+      "category": "Commercial print",
+      "status": "Allowed",
+      "text": "Permission is hereby granted, free of charge, to any person obtaining a copy of the Font Software, to use, study, copy, merge, embed, modify, redistribute, and sell modified and unmodified copies of the Font Software, subject to the following conditions...",
+      "section": "Preamble & Grant of License",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-comic-neue-2",
+      "license_id": "lic-comic-neue",
+      "category": "Font redistribution",
+      "status": "Restricted",
+      "text": "No Font Software or individual components thereof, in Original or Modified Versions, may be sold by itself. The Font Software may be bundled, redistributed and/or sold with any software, provided that each copy contains the copyright notice and this license.",
+      "section": "Condition 1 (No Standalone Sale)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-comic-neue-3",
+      "license_id": "lic-comic-neue",
+      "category": "Modification",
+      "status": "Restricted",
+      "text": "Original or Modified Versions of the Font Software may be bundled, redistributed and/or sold... provided that: 2) Original Version(s) or Modified Version(s) may not use the Reserved Font Name(s) without explicit written permission.",
+      "section": "Condition 2 (Reserved Font Names)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-arial-1",
+      "license_id": "lic-arial",
+      "category": "Commercial print",
+      "status": "Allowed",
+      "text": "You may use this font to create and print documents, commercial papers, and marketing materials.",
+      "section": "Microsoft Font FAQ Q1",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-arial-2",
+      "license_id": "lic-arial",
+      "category": "Ebook",
+      "status": "Restricted",
+      "text": "Embedding the font in applications, games, or electronic books requires a separate licensing contract from the font manufacturer Monotype.",
+      "section": "Microsoft Font FAQ Q4 (Embedding)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-arial-3",
+      "license_id": "lic-arial",
+      "category": "Font redistribution",
+      "status": "Prohibited",
+      "text": "You may not copy, share, redistribute, or license the font files themselves to any third party except as permitted under the Windows/Office license (e.g. temporary sharing with a printer for document production).",
+      "section": "Section 3.1 (Restrictions)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-caslon-1",
+      "license_id": "lic-adobe-caslon-pro",
+      "category": "Commercial print",
+      "status": "Allowed",
+      "text": "You may use the Font Software to create and distribute printed materials, documents, and publications.",
+      "section": "Section 2.1 (Permitted Uses)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-caslon-2",
+      "license_id": "lic-adobe-caslon-pro",
+      "category": "Paperback",
+      "status": "Allowed",
+      "text": "Print publishing for books and magazines is permitted for commercial release without print run limitations.",
+      "section": "Section 2.3 (Publishing)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-caslon-3",
+      "license_id": "lic-adobe-caslon-pro",
+      "category": "Commercial sale",
+      "status": "Allowed",
+      "text": "You may sell, lease, or distribute publications containing static representations of the Font Software.",
+      "section": "Section 2.4 (Distribution of Goods)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-caslon-4",
+      "license_id": "lic-adobe-caslon-pro",
+      "category": "Print-run limit",
+      "status": "Allowed",
+      "text": "There are no limits on the number of printed copies of publications generated using the Font Software.",
+      "section": "Section 2.3 (Publishing)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-caslon-5",
+      "license_id": "lic-adobe-caslon-pro",
+      "category": "Cover",
+      "status": "Allowed",
+      "text": "Design of book covers and interior layouts is permitted using static graphics created with the font software.",
+      "section": "Section 2.5 (Artwork & Visuals)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-caslon-6",
+      "license_id": "lic-adobe-caslon-pro",
+      "category": "Interior",
+      "status": "Allowed",
+      "text": "You may typeset the interior text of books using the Font Software.",
+      "section": "Section 2.1",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-caslon-7",
+      "license_id": "lic-adobe-caslon-pro",
+      "category": "Ebook",
+      "status": "Restricted",
+      "text": "Embedding the Font Software in electronic publications (e.g. EPUB, MOBI) is prohibited under the standard license and requires a separate Ebook Embedding License.",
+      "section": "Section 3.2 (Prohibited Uses)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-caslon-8",
+      "license_id": "lic-adobe-caslon-pro",
+      "category": "Font redistribution",
+      "status": "Prohibited",
+      "text": "You may not rent, lease, sublicense, give, lend, or distribute the Font Software, or any copy thereof, to any third party.",
+      "section": "Section 4.1 (No Redistribution)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-caslon-9",
+      "license_id": "lic-adobe-caslon-pro",
+      "category": "Adult / sexual content",
+      "status": "Restricted",
+      "text": "Licensee shall not use the Font Software in connection with material that violates local community standards of decency, including adult novelty items and explicit pornography.",
+      "section": "Section 5.3 (Restricted Materials)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-caslon-10",
+      "license_id": "lic-adobe-caslon-pro",
+      "category": "Modification",
+      "status": "Prohibited",
+      "text": "You may not modify, adapt, translate, reverse engineer, decompile, disassemble, or create derivative works based on the Font Software.",
+      "section": "Section 4.3 (No Modifications)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-eb-garamond-1",
+      "license_id": "lic-eb-garamond",
+      "category": "Commercial print",
+      "status": "Allowed",
+      "text": "Permission is hereby granted, free of charge, to any person obtaining a copy of the Font Software, to use, study, copy, merge, embed, modify, redistribute, and sell modified and unmodified copies of the Font Software, subject to the following conditions...",
+      "section": "Preamble & Grant of License",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-eb-garamond-2",
+      "license_id": "lic-eb-garamond",
+      "category": "Font redistribution",
+      "status": "Restricted",
+      "text": "No Font Software or individual components thereof, in Original or Modified Versions, may be sold by itself. The Font Software may be bundled, redistributed and/or sold with any software, provided that each copy contains the copyright notice and this license.",
+      "section": "Condition 1 (No Standalone Sale)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-eb-garamond-3",
+      "license_id": "lic-eb-garamond",
+      "category": "Modification",
+      "status": "Restricted",
+      "text": "Original or Modified Versions of the Font Software may be bundled, redistributed and/or sold... provided that: 2) Original Version(s) or Modified Version(s) may not use the Reserved Font Name(s) without explicit written permission.",
+      "section": "Condition 2 (Reserved Font Names)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-libre-baskerville-1",
+      "license_id": "lic-libre-baskerville",
+      "category": "Commercial print",
+      "status": "Allowed",
+      "text": "Permission is hereby granted, free of charge, to any person obtaining a copy of the Font Software, to use, study, copy, merge, embed, modify, redistribute, and sell modified and unmodified copies of the Font Software, subject to the following conditions...",
+      "section": "Preamble & Grant of License",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-libre-baskerville-2",
+      "license_id": "lic-libre-baskerville",
+      "category": "Font redistribution",
+      "status": "Restricted",
+      "text": "No Font Software or individual components thereof, in Original or Modified Versions, may be sold by itself. The Font Software may be bundled, redistributed and/or sold with any software, provided that each copy contains the copyright notice and this license.",
+      "section": "Condition 1 (No Standalone Sale)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-libre-baskerville-3",
+      "license_id": "lic-libre-baskerville",
+      "category": "Modification",
+      "status": "Restricted",
+      "text": "Original or Modified Versions of the Font Software may be bundled, redistributed and/or sold... provided that: 2) Original Version(s) or Modified Version(s) may not use the Reserved Font Name(s) without explicit written permission.",
+      "section": "Condition 2 (Reserved Font Names)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-minion-pro-1",
+      "license_id": "lic-minion-pro",
+      "category": "Commercial print",
+      "status": "Allowed",
+      "text": "You may use the Font Software to create and distribute printed materials, documents, and publications.",
+      "section": "Section 2.1 (Permitted Uses)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-minion-pro-2",
+      "license_id": "lic-minion-pro",
+      "category": "Paperback",
+      "status": "Allowed",
+      "text": "Print publishing for books and magazines is permitted for commercial release without print run limitations.",
+      "section": "Section 2.3 (Publishing)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-minion-pro-3",
+      "license_id": "lic-minion-pro",
+      "category": "Commercial sale",
+      "status": "Allowed",
+      "text": "You may sell, lease, or distribute publications containing static representations of the Font Software.",
+      "section": "Section 2.4 (Distribution of Goods)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-minion-pro-4",
+      "license_id": "lic-minion-pro",
+      "category": "Print-run limit",
+      "status": "Allowed",
+      "text": "There are no limits on the number of printed copies of publications generated using the Font Software.",
+      "section": "Section 2.3 (Publishing)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-minion-pro-5",
+      "license_id": "lic-minion-pro",
+      "category": "Cover",
+      "status": "Allowed",
+      "text": "Design of book covers and interior layouts is permitted using static graphics created with the font software.",
+      "section": "Section 2.5 (Artwork & Visuals)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-minion-pro-6",
+      "license_id": "lic-minion-pro",
+      "category": "Interior",
+      "status": "Allowed",
+      "text": "You may typeset the interior text of books using the Font Software.",
+      "section": "Section 2.1",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-minion-pro-7",
+      "license_id": "lic-minion-pro",
+      "category": "Ebook",
+      "status": "Restricted",
+      "text": "Embedding the Font Software in electronic publications (e.g. EPUB, MOBI) is prohibited under the standard license and requires a separate Ebook Embedding License.",
+      "section": "Section 3.2 (Prohibited Uses)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-minion-pro-8",
+      "license_id": "lic-minion-pro",
+      "category": "Font redistribution",
+      "status": "Prohibited",
+      "text": "You may not rent, lease, sublicense, give, lend, or distribute the Font Software, or any copy thereof, to any third party.",
+      "section": "Section 4.1 (No Redistribution)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-minion-pro-9",
+      "license_id": "lic-minion-pro",
+      "category": "Adult / sexual content",
+      "status": "Restricted",
+      "text": "Licensee shall not use the Font Software in connection with material that violates local community standards of decency, including adult novelty items and explicit pornography.",
+      "section": "Section 5.3 (Restricted Materials)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-minion-pro-10",
+      "license_id": "lic-minion-pro",
+      "category": "Modification",
+      "status": "Prohibited",
+      "text": "You may not modify, adapt, translate, reverse engineer, decompile, disassemble, or create derivative works based on the Font Software.",
+      "section": "Section 4.3 (No Modifications)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-times-new-roman-1",
+      "license_id": "lic-times-new-roman",
+      "category": "Commercial print",
+      "status": "Allowed",
+      "text": "You may use this font to create and print documents, commercial papers, and marketing materials.",
+      "section": "Microsoft Font FAQ Q1",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-times-new-roman-2",
+      "license_id": "lic-times-new-roman",
+      "category": "Ebook",
+      "status": "Restricted",
+      "text": "Embedding the font in applications, games, or electronic books requires a separate licensing contract from the font manufacturer Monotype.",
+      "section": "Microsoft Font FAQ Q4 (Embedding)",
+      "confidence": "High"
+    },
+    {
+      "clause_id": "cl-lic-times-new-roman-3",
+      "license_id": "lic-times-new-roman",
+      "category": "Font redistribution",
+      "status": "Prohibited",
+      "text": "You may not copy, share, redistribute, or license the font files themselves to any third party except as permitted under the Windows/Office license (e.g. temporary sharing with a printer for document production).",
+      "section": "Section 3.1 (Restrictions)",
+      "confidence": "High"
+    }
+  ],
+  "history": [
+    {
+      "id": "hist-1",
+      "font_name": "Garamond Premier Pro",
+      "family": "Garamond Premier Pro",
+      "postscript_name": "GaramondPremPro",
+      "project_types": [
+        "Paperback",
+        "Ebook"
+      ],
+      "production_method": "send-pdf",
+      "overall_status": "Restricted",
+      "timestamp": "2026-08-20T20:15:30.000Z"
+    },
+    {
+      "id": "hist-2",
+      "font_name": "Roboto",
+      "family": "Roboto",
+      "postscript_name": "Roboto-Regular",
+      "project_types": [
+        "Paperback",
+        "Website"
+      ],
+      "production_method": "export-pdf",
+      "overall_status": "Allowed",
+      "timestamp": "2026-08-20T20:30:12.000Z"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+# ==============================================================================
+# Font License Intelligence - .gitignore
+# ==============================================================================
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production & Build Outputs
+dist/
+dist-ssr/
+*.local
+
+# Environment Variables & Secrets (NEVER commit real API keys)
+.env
+.env*
+.env.local
+.env.example
+.env.development.local
+.env.test.local
+.env.production.local
+# Keep example template tracked:
+!.env.example
+
+# Logs & Debugging
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data & PIDs
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage & Testing Output
+coverage/
+*.lcov
+.nyc_output/
+
+# macOS System Files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows System Files
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# IDEs & Code Editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.bak
+

@@ -1,0 +1,26 @@
+{
+  "name": "font-license-intelligence",
+  "version": "1.0.0",
+  "description": "Determine font licensing permissions and restrictions for commercial use",
+  "type": "module",
+  "main": "server/server.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "nodemon server/server.js",
+    "start": "node server/server.js",
+    "test": "node verify.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "opentype.js": "^1.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "vite": "^5.4.8"
+  }
+}

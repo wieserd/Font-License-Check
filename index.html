@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font License Intelligence — Verify Font Rights for Ebooks & Print</title>
+  <meta name="description" content="Determine whether a font can legally be used for commercial projects, specifically self-published books and paperbacks, and analyze EULAs.">
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body class="dark-theme">
+  <!-- Main Grid Layout -->
+  <div class="app-container">
+    
+    <!-- Top Navigation Header -->
+    <header class="app-header">
+      <div class="logo-area" id="nav-logo">
+        <div class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 19V6.2C4 5.0799 4 4.51984 4.21799 4.09202C4.40973 3.71569 4.71569 3.40973 5.09202 3.21799C5.51984 3 6.0799 3 7.2 3H16.8C17.9201 3 18.4802 3 18.908 3.21799C19.2843 3.40973 19.5903 3.71569 19.782 4.09202C20 4.51984 20 5.0799 20 6.2V19M4 19H20M4 19C4 20.1046 4.89543 21 6 21H18C19.1046 21 20 20.1046 20 19M9 7H15M9 11H15M9 15H13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="logo-text">FontLicense<span class="highlight">Intel</span></span>
+      </div>
+      
+      <nav class="main-nav">
+        <button class="nav-btn active" id="btn-nav-dashboard">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+          My Library
+        </button>
+        <button class="nav-btn" id="btn-nav-audit">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          New Font Check
+        </button>
+        <button class="nav-btn" id="btn-nav-settings">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          API Config
+        </button>
+      </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+      
+      <!-- PAGE 1: DASHBOARD -->
+      <section id="page-dashboard" class="page-section active">
+        <div class="section-header">
+          <div>
+            <h1>Font License Dashboard</h1>
+            <p class="subtitle">Monitor compliance, restrictions, and EULA changes for your publication catalog.</p>
+          </div>
+          <button class="action-btn primary" id="btn-dash-new-audit">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"></path></svg>
+            Audit New Font
+          </button>
+        </div>
+
+        <!-- Watch Notification Alert -->
+        <div id="monitored-alerts-container" class="alert-banner hidden">
+          <div class="alert-banner-icon">⚠️</div>
+          <div class="alert-banner-content">
+            <strong>Monitored License Changed!</strong>
+            <p id="alert-banner-text">The licensing terms for Garamond Premier Pro have changed since your last review.</p>
+          </div>
+          <button class="alert-banner-action" id="btn-banner-recheck">Compare Versions</button>
+          <button class="alert-banner-close" id="btn-banner-close">&times;</button>
+        </div>
+
+        <!-- Dashboard Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-label">Total Audited Fonts</span>
+            <span class="stat-val" id="stat-total-fonts">0</span>
+          </div>
+          <div class="stat-card allowed">
+            <span class="stat-label">Allowed for Paperback</span>
+            <span class="stat-val" id="stat-allowed-print">0</span>
+          </div>
+          <div class="stat-card restricted">
+            <span class="stat-label">Restricted / Blocked</span>
+            <span class="stat-val" id="stat-restricted-fonts">0</span>
+          </div>
+        </div>
+
+        <!-- Saved Audits Table -->
+        <div class="content-panel">
+          <div class="panel-header">
+            <h2>Your Saved Fonts</h2>
+            <div style="display: flex; gap: 0.75rem;">
+              <button class="action-btn outline-btn" id="btn-check-all-monitored" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                Check All Monitored
+              </button>
+              <button class="text-btn" id="btn-refresh-history">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H17"></path></svg>
+                Sync Registry
+              </button>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table" id="table-dashboard-fonts">
+              <thead>
+                <tr>
+                  <th>Font Family</th>
+                  <th>Primary Match</th>
+                  <th>Paperback Use</th>
+                  <th>Intended Uses</th>
+                  <th>Monitored</th>
+                  <th>Last Checked</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="dashboard-fonts-tbody">
+                <!-- Dynamic Content -->
+                <tr>
+                  <td colspan="7" class="table-empty">Loading your font library...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 2: AUDIT / IDENTIFY -->
+      <section id="page-audit" class="page-section">
+        <!-- Step Indicator -->
+        <div class="step-indicator-bar">
+          <div class="step-item active" id="step-1-indicator">1. Font Identity</div>
+          <div class="step-item" id="step-2-indicator">2. Intended Project Use</div>
+          <div class="step-item" id="step-3-indicator">3. Compliance Report</div>
+        </div>
+
+        <!-- STAGE 1: IDENTIFICATION -->
+        <div id="audit-stage-identify" class="stage-container active">
+          <div class="identification-grid">
+            
+            <!-- Drag and Drop Box -->
+            <div class="upload-card card">
+              <h3>Upload Font File</h3>
+              <p class="card-desc">Extract embedded tables (OpenType/TrueType metadata, copyright strings, Vendor ID) directly.</p>
+              
+              <div class="dropzone" id="font-dropzone">
+                <input type="file" id="font-file-input" accept=".otf,.ttf,.woff,.woff2" style="display: none;">
+                <div class="dropzone-inner">
+                  <div class="upload-icon">
+                    <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                  </div>
+                  <span class="primary-msg">Drag & Drop font file here</span>
+                  <span class="secondary-msg">Supports .otf, .ttf, .woff, .woff2</span>
+                  <button class="action-btn outline-btn" id="btn-browse-file">Browse File</button>
+                </div>
+              </div>
+
+              <!-- Loading spinner for metadata extraction -->
+              <div id="parse-loading" class="spinner-container hidden">
+                <div class="spinner"></div>
+                <span>Parsing file tables client-side...</span>
+              </div>
+
+              <!-- Extracted Metadata Summary Card -->
+              <div id="extracted-metadata-card" class="metadata-card hidden">
+                <div class="meta-header">
+                  <span class="meta-badge">Metadata Extracted</span>
+                  <button class="close-text-btn" id="btn-clear-extracted">&times; Remove</button>
+                </div>
+                <div class="meta-grid">
+                  <div class="meta-item"><strong>Family Name:</strong> <span id="meta-family">-</span></div>
+                  <div class="meta-item"><strong>Style:</strong> <span id="meta-style">-</span></div>
+                  <div class="meta-item"><strong>PostScript:</strong> <span id="meta-postscript">-</span></div>
+                  <div class="meta-item"><strong>Vendor ID:</strong> <span id="meta-vendor">-</span></div>
+                  <div class="meta-item"><strong>Designer:</strong> <span id="meta-designer">-</span></div>
+                  <div class="meta-item"><strong>Manufacturer / Foundry:</strong> <span id="meta-manufacturer">-</span></div>
+                  <div class="meta-item"><strong>Version:</strong> <span id="meta-version">-</span></div>
+                  <div class="meta-item"><strong>Trademark:</strong> <span id="meta-trademark" class="truncate">-</span></div>
+                  <div class="meta-item full-width"><strong>Copyright:</strong> <span id="meta-copyright" class="truncate">-</span></div>
+                  <div class="meta-item full-width"><strong>Vendor URL:</strong> <span id="meta-vendor-url" class="truncate">-</span></div>
+                  <div class="meta-item full-width"><strong>License URL / Info:</strong> <span id="meta-lic-url" class="truncate">-</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Font Name Search -->
+            <div class="search-card card">
+              <h3>Search Typeface Name</h3>
+              <p class="card-desc">If you don't have the font file on your device, search our registry by typography name.</p>
+              
+              <div class="search-input-wrapper">
+                <input type="text" id="font-search-input" placeholder="e.g. Garamond Premier Pro">
+                <button class="action-btn primary" id="btn-search-font">Search</button>
+              </div>
+
+              <div id="search-results-box" class="search-results hidden">
+                <h4>Suggested Matches</h4>
+                <ul id="search-candidates-list" class="candidates-list">
+                  <!-- candidates load here -->
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Matching verification panel -->
+          <div id="candidates-verification-panel" class="verification-panel card hidden">
+            <h3>Confirm Typographic Identity</h3>
+            <p class="card-desc">We matched your upload/search against the following licenses in our database:</p>
+            
+            <div id="candidates-match-list" class="candidates-grid">
+              <!-- Matched candidate buttons / cards -->
+            </div>
+
+            <div class="custom-eula-trigger-card">
+              <p>Don't see your specific license, or want to parse a custom EULA text for this font?</p>
+              <button class="action-btn outline-btn" id="btn-trigger-custom-eula">Paste Custom EULA Text</button>
+            </div>
+
+            <div class="step-actions">
+              <button class="action-btn primary disabled" id="btn-stage1-next" disabled>
+                Next Step: Configure Intended Use
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 2: INTENDED USE -->
+        <div id="audit-stage-use" class="stage-container">
+          <div class="use-configuration-grid">
+            
+            <!-- Intended use checklist -->
+            <div class="card">
+              <h3>Select Intended Project Uses</h3>
+              <p class="card-desc">Select all projects you are planning to release. Licensing restrictions may vary across mediums.</p>
+              
+              <div class="checkbox-group" id="use-cases-checkboxes">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="Paperback / printed book" checked>
+                  <span class="checkbox-box"></span>
+                  <span class="checkbox-label">
+                    <strong>Paperback / printed book</strong>
+                    <span class="checkbox-desc">Amazon KDP, IngramSpark, self-published book printing</span>
+                  </span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="Hardcover">
+                  <span class="checkbox-box"></span>
+                  <span class="checkbox-label">
+                    <strong>Hardcover book</strong>
+                    <span class="checkbox-desc">Commercial hardcover print runs</span>
+                  </span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="Ebook">
+                  <span class="checkbox-box"></span>
+                  <span class="checkbox-label">
+                    <strong>Ebook</strong>
+                    <span class="checkbox-desc">EPUB, MOBI, Kindle format embedding</span>
+                  </span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="Website">
+                  <span class="checkbox-box"></span>
+                  <span class="checkbox-label">
+                    <strong>Website</strong>
+                    <span class="checkbox-desc">Commercial web domain self-hosting or embedding</span>
+                  </span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="App / software">
+                  <span class="checkbox-box"></span>
+                  <span class="checkbox-label">
+                    <strong>App / software</strong>
+                    <span class="checkbox-desc">Direct font software embedding inside mobile or desktop apps</span>
+                  </span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="Logo / branding">
+                  <span class="checkbox-box"></span>
+                  <span class="checkbox-label">
+                    <strong>Logo / branding</strong>
+                    <span class="checkbox-desc">Using font vectors in company logo marks</span>
+                  </span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="Packaging">
+                  <span class="checkbox-box"></span>
+                  <span class="checkbox-label">
+                    <strong>Packaging</strong>
+                    <span class="checkbox-desc">Physical commercial product container designs</span>
+                  </span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="Merchandise">
+                  <span class="checkbox-box"></span>
+                  <span class="checkbox-label">
+                    <strong>Merchandise</strong>
+                    <span class="checkbox-desc">T-shirts, posters, decals, coffee cups</span>
+                  </span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="Advertising">
+                  <span class="checkbox-box"></span>
+                  <span class="checkbox-label">
+                    <strong>Advertising</strong>
+                    <span class="checkbox-desc">Paid marketing campaign graphics (PDFs, banners)</span>
+                  </span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="Social media">
+                  <span class="checkbox-box"></span>
+                  <span class="checkbox-label">
+                    <strong>Social media</strong>
+                    <span class="checkbox-desc">Commercial Instagram, TikTok, Facebook posts</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Paperback distribution questions -->
+            <div class="card sidebar-config">
+              <div class="commercial-setting">
+                <h3>Commercial Nature</h3>
+                <label class="custom-toggle">
+                  <input type="checkbox" id="project-commercial-toggle" checked>
+                  <span class="toggle-slider"></span>
+                  <span class="toggle-label">Commercial Release (Project for profit)</span>
+                </label>
+              </div>
+
+              <div class="production-setting" id="production-setting-box">
+                <h3>Paperback Production Method</h3>
+                <p class="card-desc">The format you will supply to your printer. This impacts font redistribution rights.</p>
+                
+                <select id="project-production-select" class="custom-select">
+                  <option value="export-pdf" selected>Export PDF myself (Embed subset, printer gets static PDF)</option>
+                  <option value="send-pdf">Send full PDF to printer (Printer gets full PDF)</option>
+                  <option value="send-source">Send source files to printer (Printer receives raw font files)</option>
+                  <option value="publishing">Use KDP/IngramSpark web interface</option>
+                  <option value="unknown">Unknown</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="step-actions">
+            <button class="action-btn outline-btn" id="btn-stage2-prev">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"></path></svg>
+              Back to Identity
+            </button>
+            <button class="action-btn primary" id="btn-stage2-next">
+              Generate Compliance Report
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- STAGE 3: RESULT COMPLIANCE REPORT -->
+        <div id="audit-stage-report" class="stage-container">
+          
+          <div class="report-header card">
+            <div class="report-title-row">
+              <div>
+                <span class="pre-title" id="report-font-subtitle">Adobe Garamond Premier Pro</span>
+                <h2 id="report-title-text">Can I use this font for my paperback?</h2>
+              </div>
+              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <button class="action-btn outline-btn" id="btn-report-export-cert">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                  Export Certificate (PDF)
+                </button>
+                <button class="action-btn outline-btn" id="btn-report-save-db">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"></path><path d="M12 9v6m-3-3h6"></path></svg>
+                  Add to My Library
+                </button>
+              </div>
+            </div>
+
+            <!-- Big Result Shield Badge -->
+            <div class="shield-container" id="report-shield-container">
+              <div class="shield-icon" id="report-shield-badge">✅</div>
+              <div class="shield-meta">
+                <h1 id="report-overall-status">ALLOWED</h1>
+                <p id="report-overall-desc">Commercial print use is permitted under the identified license.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Report Details Flex Grid -->
+          <div class="report-detail-layout">
+            
+            <!-- Left Side: Table & Checklists -->
+            <div class="report-main-column">
+              
+              <!-- Paperback checklist (Only shows when paperback selected) -->
+              <div class="content-panel" id="report-paperback-panel">
+                <div class="panel-header">
+                  <h2>Paperback-Specific Checklist</h2>
+                  <span class="meta-badge success">Paperback Active</span>
+                </div>
+                <div class="checklist-grid" id="paperback-checklist-items">
+                  <!-- Loaded dynamically -->
+                </div>
+              </div>
+
+              <!-- General Restrictions Table -->
+              <div class="content-panel">
+                <div class="panel-header">
+                  <h2>License Restrictions & Permissions</h2>
+                  <p class="subtitle">Click any row to display verifiable clauses in the Evidence Drawer.</p>
+                </div>
+                <div class="table-responsive">
+                  <table class="data-table interactive-table" id="table-report-restrictions">
+                    <thead>
+                      <tr>
+                        <th>Area / Intended Use</th>
+                        <th>Assessment</th>
+                        <th>Evidence Link</th>
+                      </tr>
+                    </thead>
+                    <tbody id="report-restrictions-tbody">
+                      <!-- Dynamic rows -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Confidence & EULA Versioning -->
+            <div class="report-sidebar-column">
+              
+              <!-- Confidence Card -->
+              <div class="sidebar-card status-box" id="confidence-card-box">
+                <h3>License Confidence</h3>
+                <div class="confidence-display">
+                  <div class="confidence-indicator" id="report-confidence-indicator">High</div>
+                  <p id="report-confidence-desc">Official foundry source found + clearly applicable license terms verified.</p>
+                </div>
+              </div>
+
+              <!-- License Info Card -->
+              <div class="sidebar-card">
+                <h3>License Information</h3>
+                <div class="info-list">
+                  <div class="info-row">
+                    <span class="info-label">EULA Title</span>
+                    <span class="info-val truncate" id="report-lic-title">-</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">Type</span>
+                    <span class="info-val" id="report-lic-type">-</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">License Checked</span>
+                    <span class="info-val" id="report-lic-checked">-</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">Version</span>
+                    <span class="info-val" id="report-lic-version">-</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">Source URL</span>
+                    <a href="#" target="_blank" class="info-val link truncate" id="report-lic-url-link">-</a>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">Document Hash</span>
+                    <span class="info-val code" id="report-lic-hash">-</span>
+                  </div>
+                </div>
+
+                <div class="watch-toggle-box">
+                  <label class="custom-toggle">
+                    <input type="checkbox" id="license-watch-toggle" checked>
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Monitor this license for changes</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Legal Positioning Statement -->
+              <div class="disclaimer-card">
+                <h4>Legal compliance reminder</h4>
+                <p>This report offers license research and compliance assistance. It is <strong>not legal advice</strong>. It interprets terms in the identified document for informational reference. You should confirm matching documents with a legal professional.</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Bottom Stage Navigation -->
+          <div class="step-actions">
+            <button class="action-btn outline-btn" id="btn-report-back">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"></path></svg>
+              Modify Use Options
+            </button>
+            <button class="action-btn secondary" id="btn-report-restart">
+              Audit Another Font
+            </button>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- PAGE 3: SETTINGS / API CONFIG -->
+      <section id="page-settings" class="page-section">
+        <div class="section-header">
+          <div>
+            <h1>Developer API Configuration</h1>
+            <p class="subtitle">Manage credentials and configure artificial intelligence parsing engines.</p>
+          </div>
+        </div>
+
+        <div class="card settings-card">
+          <h3>Google Gemini API Credentials</h3>
+          <p class="card-desc">Provide your Gemini API key to enable live extraction and parsing of raw End User License Agreement texts.</p>
+          
+          <div class="form-group">
+            <label for="input-gemini-key">Gemini API Key</label>
+            <input type="password" id="input-gemini-key" placeholder="AIzaSy...">
+            <span class="input-desc">Your key is stored locally in the browser's session storage. It is only sent directly to Google APIs.</span>
+          </div>
+
+          <div class="api-status-badge offline" id="api-status-indicator">
+            <span class="dot"></span> Local Heuristic Fallback Active
+          </div>
+
+          <div class="step-actions">
+            <button class="action-btn primary" id="btn-save-settings">Save API Credentials</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 4: CUSTOM EULA TEXT AREA -->
+      <section id="page-custom-eula" class="page-section">
+        <div class="section-header">
+          <div>
+            <h1>Analyze Custom Font License</h1>
+            <p class="subtitle font-style-sub" id="custom-eula-font-name">Custom Font File</p>
+          </div>
+        </div>
+
+        <div class="custom-eula-grid">
+          <div class="card custom-form">
+            <h3>Provide License Terms</h3>
+            <p class="card-desc">Paste the complete text of the End User License Agreement (EULA) or terms of service for analysis.</p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="input-license-title">License Title</label>
+                <input type="text" id="input-license-title" placeholder="e.g. Adobe End User License Agreement v4.1">
+              </div>
+              <div class="form-group">
+                <label for="input-license-source">Source Link / Foundry</label>
+                <input type="text" id="input-license-source" placeholder="e.g. https://foundry.com/eula">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="input-eula-textarea">EULA Plaintext Document</label>
+              <textarea id="input-eula-textarea" placeholder="Paste agreement text here..." rows="12"></textarea>
+            </div>
+
+            <div class="step-actions">
+              <button class="action-btn outline-btn" id="btn-custom-cancel">Cancel</button>
+              <button class="action-btn primary" id="btn-custom-analyze">
+                Parse License Text
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="card info-box">
+            <h3>How Custom Parsing Works</h3>
+            <p>Our extraction engine parses the pasted EULA to map clauses into standard categories. This is an evidence-first system:</p>
+            
+            <ul class="info-bullets">
+              <li>
+                <strong>Heuristic Fallback:</strong> If no Gemini API key is configured, the engine scans the document for structural keywords (regex keywords, terms, categories) and extracts matching quotes.
+              </li>
+              <li>
+                <strong>AI Parser:</strong> If a Gemini API key is saved, the system calls Google's LLM to identify, categorize, and capture verbatim clauses, sections, and confidence scores.
+              </li>
+              <li>
+                <strong>Audit History:</strong> Analyzed fonts are automatically saved to your local database registry for future checks and tracking.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Custom EULA Analysis Loading -->
+        <div id="custom-analysis-loading" class="spinner-container hidden overlay">
+          <div class="spinner"></div>
+          <h3>Performing Legal-Information Extraction...</h3>
+          <p>Analyzing document syntax, extracting clauses, and running rule evaluations.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Slide-Out Evidence Sidebar Panel (Overlay) -->
+    <div id="evidence-drawer" class="evidence-drawer">
+      <div class="drawer-header">
+        <div>
+          <span class="drawer-tag" id="drawer-tag-area">Adult Content</span>
+          <h3 id="drawer-title">Verifiable Evidence</h3>
+        </div>
+        <button class="drawer-close" id="btn-close-drawer">&times;</button>
+      </div>
+
+      <div class="drawer-body">
+        
+        <!-- Status Badge Row -->
+        <div class="drawer-status-card">
+          <span class="drawer-status-lbl">Assessment Status</span>
+          <span class="drawer-status-val prohibited" id="drawer-status-badge">Prohibited</span>
+        </div>
+
+        <!-- Fact vs Interpretation section -->
+        <div class="drawer-section">
+          <h4>License Fact (Verbatim Clause)</h4>
+          <div class="verbatim-quote">
+            <p id="drawer-verbatim-text">"Licensee shall not use the Font Software in connection with material that violates local community standards of decency, including adult novelty items and explicit pornography."</p>
+            <span class="section-ref" id="drawer-section-reference">Section 5.3 (Restricted Materials)</span>
+            <a href="#" target="_blank" class="text-btn" id="drawer-source-link" style="margin-top: 0.75rem; font-size: 0.8rem; display: inline-flex;">View Original License Document &rarr;</a>
+          </div>
+        </div>
+
+        <div class="drawer-section">
+          <h4>AI Compliance Interpretation</h4>
+          <p id="drawer-interpretation-text">Our engine matched this clause to prohibited content use. Since adult content restrictions are present, printing commercial paperbacks in this category is prohibited.</p>
+        </div>
+
+        <!-- Source Hierarchy Info -->
+        <div class="drawer-section">
+          <h4>Source Integrity</h4>
+          <div class="source-card">
+            <div class="source-tier" id="drawer-source-tier">Tier 1 — Primary Source</div>
+            <p id="drawer-source-desc">Direct font foundry or designer EULA. Highest level of legal confidence.</p>
+          </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="drawer-disclaimer">
+          <strong>Not Legal Advice</strong>
+          This represents a comparison of the document text against a predefined taxonomy. You remain responsible for reviewing full agreements.
+        </div>
+
+      </div>
+    </div>
+    
+    <!-- Drawer Overlay Backdrop -->
+    <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  </div>
+
+  <!-- OpentypeJS library parser -->
+  <script src="https://cdn.jsdelivr.net/npm/opentype.js@1.3.4/dist/opentype.min.js"></script>
+
+  <!-- Frontend main logic script -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
